@@ -60,7 +60,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2022-05-05T09:42:27.792Z" itemprop="dateUpdated">2022-05-05</time>
+    更新 <time datetime="2022-05-05T14:22:10.286Z" itemprop="dateUpdated">2022-05-05</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -583,7 +583,293 @@
 <h2 id="continue-语句"><a href="#continue-语句" class="headerlink" title="continue 语句"></a>continue 语句</h2><p><strong>continue 语句</strong>中断循环中的迭代，如果出现了指定的条件，然后继续循环中的下一个迭代。 以下例子在值为 3 时，直接跳过：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (i==<span class="number">3</span>) <span class="keyword">continue</span>;</span><br><span class="line">    x=x + <span class="string">&quot;The number is &quot;</span> + i + <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="JavaScript-typeof-null-和-undefined"><a href="#JavaScript-typeof-null-和-undefined" class="headerlink" title="JavaScript typeof, null, 和 undefined"></a>JavaScript typeof, null, 和 undefined</h1>
+<h1 id="JavaScript-typeof-null-和-undefined"><a href="#JavaScript-typeof-null-和-undefined" class="headerlink" title="JavaScript typeof, null, 和 undefined"></a>JavaScript typeof, null, 和 undefined</h1><h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p>在 JavaScript 中 null 表示 "什么都没有"。</p>
+<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
+<h2 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h2><p>你可以使用 typeof 操作符来检测变量的数据类型。</p>
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>在 JavaScript 中, <strong>undefined</strong> 是一个没有设置值的变量。</p>
+<p><strong>typeof</strong> 一个没有值的变量会返回 <strong>undefined</strong>。</p>
+<p>任何变量都可以通过设置值为 <strong>undefined</strong> 来清空。 类型为 <strong>undefined</strong>.</p>
+<h2 id="undefined-和-null-的区别"><a href="#undefined-和-null-的区别" class="headerlink" title="undefined 和 null 的区别"></a>undefined 和 null 的区别</h2><p>null 和 undefined 的值相等，但类型不等：</p>
+<p><strong>1、定义</strong></p>
+<ul>
+<li>（1）undefined：是所有没有赋值变量的默认值，自动赋值。</li>
+<li>（2）null：主动释放一个变量引用的对象，表示一个变量不再指向任何对象地址。</li>
+</ul>
+<p><strong>2、何时使用null?</strong></p>
+<p>当使用完一个比较大的对象时，需要对其进行释放内存时，设置为 null。</p>
+<p><strong>3、null 与 undefined 的异同点是什么呢？</strong></p>
+<p><strong>共同点</strong>：都是原始类型，保存在栈中变量本地。</p>
+<p>不同点：</p>
+<p>（1）undefined——表示变量声明过但并未赋过值。</p>
+<p>它是所有未赋值变量默认值，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;    <span class="comment">// a 自动被赋值为 undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）null——表示一个变量将来可能指向一个对象。一般用于主动释放指向对象的引用，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> emps = [<span class="string">&#x27;ss&#x27;</span>,<span class="string">&#x27;nn&#x27;</span>];</span><br><span class="line">emps = <span class="literal">null</span>;     <span class="comment">// 释放指向数组的引用</span></span><br></pre></td></tr></table></figure>
+
+<p>4、延伸——垃圾回收站</p>
+<p>它是专门释放对象内存的一个程序。</p>
+<ul>
+<li>（1）在底层，后台伴随当前程序同时运行；引擎会定时自动调用垃圾回收期；</li>
+<li>（2）总有一个对象不再被任何变量引用时，才释放。</li>
+</ul>
+<h1 id="JavaScript-类型转换"><a href="#JavaScript-类型转换" class="headerlink" title="JavaScript 类型转换"></a>JavaScript 类型转换</h1><p>Number() 转换为数字， </p>
+<p>String() 转换为字符串，</p>
+<p> Boolean() 转换为布尔值</p>
+<h2 id="constructor-属性"><a href="#constructor-属性" class="headerlink" title="constructor 属性"></a>constructor 属性</h2><p><strong>constructor</strong> 属性返回所有 JavaScript 变量的构造函数。</p>
+<p>你可以使用 constructor 属性来查看对象是否为数组 (包含字符串 "Array"):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isArray</span>(<span class="params">myArray</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> myArray.<span class="property">constructor</span>.<span class="title function_">toString</span>().<span class="title function_">indexOf</span>(<span class="string">&quot;Array&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你可以使用 constructor 属性来查看对象是否为日期 (包含字符串 "Date"):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isDate</span>(<span class="params">myDate</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> myDate.<span class="property">constructor</span>.<span class="title function_">toString</span>().<span class="title function_">indexOf</span>(<span class="string">&quot;Date&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-类型转换-1"><a href="#JavaScript-类型转换-1" class="headerlink" title="JavaScript 类型转换"></a>JavaScript 类型转换</h2><p>JavaScript 变量可以转换为新变量或其他数据类型：</p>
+<ul>
+<li>通过使用 JavaScript 函数</li>
+<li>通过 JavaScript 自身自动转换</li>
+</ul>
+<h2 id="将数字转换为字符串"><a href="#将数字转换为字符串" class="headerlink" title="将数字转换为字符串"></a>将数字转换为字符串</h2><p>全局方法 <strong>String()</strong> 可以将数字转换为字符串。</p>
+<p>该方法可用于任何类型的数字，字母，变量，表达式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">String</span>(x)         <span class="comment">// 将变量 x 转换为字符串并返回</span></span><br><span class="line"><span class="title class_">String</span>(<span class="number">123</span>)       <span class="comment">// 将数字 123 转换为字符串并返回</span></span><br><span class="line"><span class="title class_">String</span>(<span class="number">100</span> + <span class="number">23</span>)  <span class="comment">// 将数字表达式转换为字符串并返回</span></span><br></pre></td></tr></table></figure>
+
+<p>Number 方法 <strong>toString()</strong> 也是有同样的效果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x.<span class="title function_">toString</span>()</span><br><span class="line">(<span class="number">123</span>).<span class="title function_">toString</span>() <span class="comment">// 将数字123转换为字符串</span></span><br><span class="line">(<span class="number">100</span> + <span class="number">23</span>).<span class="title function_">toString</span>()  <span class="comment">//toString() 方法将数字转换为字符串。</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/jsref-obj-number.html">Number 方法</a> 章节中，你可以找到更多数字转换为字符串的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">toExponential()</td>
+<td align="left">把对象的值转换为指数计数法。</td>
+</tr>
+<tr>
+<td align="left">toFixed()</td>
+<td align="left">把数字转换为字符串，结果的小数点后有指定位数的数字。</td>
+</tr>
+<tr>
+<td align="left">toPrecision()</td>
+<td align="left">把数字格式化为指定的长度。</td>
+</tr>
+</tbody></table>
+<h2 id="将布尔值转换为字符串"><a href="#将布尔值转换为字符串" class="headerlink" title="将布尔值转换为字符串"></a>将布尔值转换为字符串</h2><p>全局方法 <strong>String()</strong> 可以将布尔值转换为字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">String</span>(<span class="literal">false</span>)        <span class="comment">// 返回 &quot;false&quot;</span></span><br><span class="line"><span class="title class_">String</span>(<span class="literal">true</span>)         <span class="comment">// 返回 &quot;true&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Boolean 方法 <strong>toString()</strong> 也有相同的效果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span>.<span class="title function_">toString</span>()     <span class="comment">// 返回 &quot;false&quot;</span></span><br><span class="line"><span class="literal">true</span>.<span class="title function_">toString</span>()      <span class="comment">// 返回 &quot;true&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="将日期转换为字符串"><a href="#将日期转换为字符串" class="headerlink" title="将日期转换为字符串"></a>将日期转换为字符串</h2><p>Date() 返回字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Date</span>()      <span class="comment">// 返回 Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)</span></span><br></pre></td></tr></table></figure>
+
+<p>全局方法 String() 可以将日期对象转换为字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">String</span>(<span class="keyword">new</span> <span class="title class_">Date</span>())      <span class="comment">// 返回 Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">getDate()</td>
+<td align="left">从 Date 对象返回一个月中的某一天 (1 ~ 31)。</td>
+</tr>
+<tr>
+<td align="left">getDay()</td>
+<td align="left">从 Date 对象返回一周中的某一天 (0 ~ 6)。</td>
+</tr>
+<tr>
+<td align="left">getFullYear()</td>
+<td align="left">从 Date 对象以四位数字返回年份。</td>
+</tr>
+<tr>
+<td align="left">getHours()</td>
+<td align="left">返回 Date 对象的小时 (0 ~ 23)。</td>
+</tr>
+<tr>
+<td align="left">getMilliseconds()</td>
+<td align="left">返回 Date 对象的毫秒(0 ~ 999)。</td>
+</tr>
+<tr>
+<td align="left">getMinutes()</td>
+<td align="left">返回 Date 对象的分钟 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td align="left">getMonth()</td>
+<td align="left">从 Date 对象返回月份 (0 ~ 11)。</td>
+</tr>
+<tr>
+<td align="left">getSeconds()</td>
+<td align="left">返回 Date 对象的秒数 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td align="left">getTime()</td>
+<td align="left">返回 1970 年 1 月 1 日至今的毫秒数。</td>
+</tr>
+</tbody></table>
+<h2 id="将字符串转换为数字"><a href="#将字符串转换为数字" class="headerlink" title="将字符串转换为数字"></a>将字符串转换为数字</h2><p>全局方法 <strong>Number()</strong> 可以将字符串转换为数字。</p>
+<p>字符串包含数字(如 "3.14") 转换为数字 (如 3.14).</p>
+<p>空字符串转换为 0。</p>
+<p>其他的字符串会转换为 NaN (不是个数字)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Number</span>(<span class="string">&quot;3.14&quot;</span>)    <span class="comment">// 返回 3.14</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="string">&quot; &quot;</span>)       <span class="comment">// 返回 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="string">&quot;&quot;</span>)        <span class="comment">// 返回 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="string">&quot;99 88&quot;</span>)   <span class="comment">// 返回 NaN</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">parseFloat()</td>
+<td align="left">解析一个字符串，并返回一个浮点数。</td>
+</tr>
+<tr>
+<td align="left">parseInt()</td>
+<td align="left">解析一个字符串，并返回一个整数。</td>
+</tr>
+</tbody></table>
+<h2 id="将布尔值转换为数字"><a href="#将布尔值转换为数字" class="headerlink" title="将布尔值转换为数字"></a>将布尔值转换为数字</h2><p>全局方法 <strong>Number()</strong> 可将布尔值转换为数字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Number</span>(<span class="literal">false</span>)     <span class="comment">// 返回 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="literal">true</span>)      <span class="comment">// 返回 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="将日期转换为数字"><a href="#将日期转换为数字" class="headerlink" title="将日期转换为数字"></a>将日期转换为数字</h2><p>全局方法 <strong>Number()</strong> 可将日期转换为数字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="title class_">Number</span>(d)          <span class="comment">// 返回 1404568027739</span></span><br></pre></td></tr></table></figure>
+
+<p>日期方法 <strong>getTime()</strong> 也有相同的效果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">d.<span class="title function_">getTime</span>()        <span class="comment">// 返回 1404568027739</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自动转换类型"><a href="#自动转换类型" class="headerlink" title="自动转换类型"></a>自动转换类型</h2><p>当 JavaScript 尝试操作一个 "错误" 的数据类型时，会自动转换为 "正确" 的数据类型。</p>
+<p>以下输出结果不是你所期望的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> + <span class="literal">null</span>    <span class="comment">// 返回 5         null 转换为 0</span></span><br><span class="line"><span class="string">&quot;5&quot;</span> + <span class="literal">null</span>  <span class="comment">// 返回&quot;5null&quot;   null 转换为 &quot;null&quot;</span></span><br><span class="line"><span class="string">&quot;5&quot;</span> + <span class="number">1</span>     <span class="comment">// 返回 &quot;51&quot;      1 转换为 &quot;1&quot; </span></span><br><span class="line"><span class="string">&quot;5&quot;</span> - <span class="number">1</span>     <span class="comment">// 返回 4         &quot;5&quot; 转换为 5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自动转换为字符串"><a href="#自动转换为字符串" class="headerlink" title="自动转换为字符串"></a>自动转换为字符串</h2><p>当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 <strong>toString() 方法</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">innerHTML</span> = myVar;</span><br><span class="line">myVar = &#123;<span class="attr">name</span>:<span class="string">&quot;Fjohn&quot;</span>&#125;  <span class="comment">// toString 转换为 &quot;[object Object]&quot;</span></span><br><span class="line">myVar = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]       <span class="comment">// toString 转换为 &quot;1,2,3,4&quot;</span></span><br><span class="line">myVar = <span class="keyword">new</span> <span class="title class_">Date</span>()      <span class="comment">// toString 转换为 &quot;Fri Jul 18 2014 09:08:55 GMT+0200&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>数字和布尔值也经常相互转换：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myVar = <span class="number">123</span>             <span class="comment">// toString 转换为 &quot;123&quot;</span></span><br><span class="line">myVar = <span class="literal">true</span>            <span class="comment">// toString 转换为 &quot;true&quot;</span></span><br><span class="line">myVar = <span class="literal">false</span>           <span class="comment">// toString 转换为 &quot;false&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h1><p>正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式。</p>
+<p>搜索模式可用于文本搜索和文本替换。</p>
+<h2 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h2><p>正则表达式是由一个字符序列形成的搜索模式。</p>
+<p>当你在文本中搜索数据时，你可以用搜索模式来描述你要查询的内容。</p>
+<p>正则表达式可以是一个简单的字符，或一个更复杂的模式。</p>
+<p>正则表达式可用于所有文本搜索和文本替换的操作。</p>
+<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/正则表达式主体/修饰符(可选)    </span><br></pre></td></tr></table></figure>
+
+<p>实例解析：</p>
+<p><strong>/runoob/i</strong> 是一个正则表达式。</p>
+<p><strong>runoob</strong> 是一个<strong>正则表达式主体</strong> (用于检索)。</p>
+<p><strong>i</strong> 是一个<strong>修饰符</strong> (搜索不区分大小写)。</p>
+<h2 id="使用字符串方法"><a href="#使用字符串方法" class="headerlink" title="使用字符串方法"></a>使用字符串方法</h2><p>在 JavaScript 中，正则表达式通常用于两个字符串方法 : search() 和 replace()。</p>
+<p><strong>search()</strong> 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。</p>
+<p><strong>replace()</strong> 方法用于在字符串中用一些字符串替换另一些字符串，或替换一个与正则表达式匹配的子串。</p>
+<h2 id="search-方法使用正则表达式"><a href="#search-方法使用正则表达式" class="headerlink" title="search() 方法使用正则表达式"></a>search() 方法使用正则表达式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;Visit Runoob!&quot;</span>; </span><br><span class="line"><span class="keyword">var</span> n = str.<span class="title function_">search</span>(<span class="regexp">/Runoob/i</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="replace-方法使用正则表达式"><a href="#replace-方法使用正则表达式" class="headerlink" title="replace() 方法使用正则表达式"></a>replace() 方法使用正则表达式</h2><p>使用正则表达式且不区分大小写将字符串中的 Microsoft 替换为 Runoob :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">innerHTML</span>; </span><br><span class="line"><span class="keyword">var</span> txt = str.<span class="title function_">replace</span>(<span class="regexp">/microsoft/i</span>,<span class="string">&quot;Runoob&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="replace-方法使用字符串"><a href="#replace-方法使用字符串" class="headerlink" title="replace() 方法使用字符串"></a>replace() 方法使用字符串</h2><p>replace() 方法将接收字符串作为参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">innerHTML</span>; </span><br><span class="line"><span class="keyword">var</span> txt = str.<span class="title function_">replace</span>(<span class="string">&quot;Microsoft&quot;</span>,<span class="string">&quot;Runoob&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><p><strong>修饰符</strong> 可以在全局搜索中不区分大小写:</p>
+<table>
+<thead>
+<tr>
+<th align="left">修饰符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">执行对大小写不敏感的匹配。</td>
+</tr>
+<tr>
+<td align="left">g</td>
+<td align="left">执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</td>
+</tr>
+<tr>
+<td align="left">m</td>
+<td align="left">执行多行匹配。</td>
+</tr>
+</tbody></table>
+<h2 id="正则表达式模式"><a href="#正则表达式模式" class="headerlink" title="正则表达式模式"></a>正则表达式模式</h2><p>方括号用于查找某个范围内的字符：</p>
+<table>
+<thead>
+<tr>
+<th align="left">表达式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[abc]</td>
+<td align="left">查找方括号之间的任何字符。</td>
+</tr>
+<tr>
+<td align="left">[0-9]</td>
+<td align="left">查找任何从 0 至 9 的数字。</td>
+</tr>
+<tr>
+<td align="left">(x|y)</td>
+<td align="left">查找任何以 | 分隔的选项。</td>
+</tr>
+</tbody></table>
+<p>元字符是拥有特殊含义的字符：</p>
+<table>
+<thead>
+<tr>
+<th align="left">元字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\d</td>
+<td align="left">查找数字。</td>
+</tr>
+<tr>
+<td align="left">\s</td>
+<td align="left">查找空白字符。</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">匹配单词边界。</td>
+</tr>
+<tr>
+<td align="left">\uxxxx</td>
+<td align="left">查找以十六进制数 xxxx 规定的 Unicode 字符。</td>
+</tr>
+</tbody></table>
+<p>量词:</p>
+<table>
+<thead>
+<tr>
+<th align="left">量词</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">n+</td>
+<td align="left">匹配任何包含至少一个 <em>n</em> 的字符串。</td>
+</tr>
+<tr>
+<td align="left">n*</td>
+<td align="left">匹配任何包含零个或多个 <em>n</em> 的字符串。</td>
+</tr>
+<tr>
+<td align="left">n?</td>
+<td align="left">匹配任何包含零个或一个 <em>n</em> 的字符串。</td>
+</tr>
+</tbody></table>
+<h2 id="使用-test"><a href="#使用-test" class="headerlink" title="使用 test()"></a>使用 test()</h2><p>test() 方法是一个正则表达式方法。</p>
+<p>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。</p>
+<p>以下实例用于搜索字符串中的字符 "e"：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/e/</span>;</span><br><span class="line">patt.<span class="title function_">test</span>(<span class="string">&quot;The best things in life are free!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
       </div>
         <div class="support-author">
           <p>感谢您的阅读。 🙏
